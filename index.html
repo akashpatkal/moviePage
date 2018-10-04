@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<link href="css/style.css" rel="stylesheet">
+
+<body ng-app="myApp">
+
+    <p><a href="#/!">Home</a></p>
+    <hr>
+
+    <div ng-view></div>
+
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    templateUrl: "listAll.html",
+                    controller: "movieCtrl",
+
+                })
+                .when("/movie/:id", {
+                    templateUrl: "moviedetail.html",
+                    controller: "movieDetailControler",
+
+
+                });
+        });
+
+        app.controller("movieCtrl", function ($scope, $http, $rootScope) {
+            $http.get("data.txt")
+                .then(function (response) {
+                    $scope.movies = response.data;
+                    $rootScope.movies = response.data;
+                });
+
+        });
+
+        app.controller("movieDetailControler", function ($scope, $routeParams, $location, $rootScope, $http) {
+            var url = $location.path().split('/');
+            var id = url[2];
+            console.log("Inside movieDetailController", url, id);
+            console.log("Movies ", $rootScope.movies)
+            if ($rootScope.movies == null || $rootScope.movies == undefined) {
+                $http.get("data.txt")
+                    .then(function (response) {
+                        $scope.movies = response.data;
+                        $rootScope.movies = response.data;
+                    });
+
+            }
+            else {
+                movies = $rootScope.movies
+            }
+            angular.forEach(movies, function (value, key) {
+                if (value.Id == id) {
+                    $scope.movie = value;
+                }
+                console.log(key + ': ' + value.Id);
+            });
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

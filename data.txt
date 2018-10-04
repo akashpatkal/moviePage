@@ -1,0 +1,31 @@
+[
+                    {
+                        "Name": "Johnny English Strikes Again",
+                        "Id": 101,
+                        "Rating": 81,
+                        "Review": "A cyber-attack reveals the identity of all active undercover agents in Britain, leaving Johnny English as the secret service's last hope. Called out of retirement, English dives head first into action with the mission to find the mastermind hacker. As a man with few skills and analogue methods, Johnny English must overcome the challenges of modern technology to make this mission a success.",
+                        "photo": "./images/jonyEnglish.jpg"
+                    },
+                    {
+                        "Name": "Venom",
+                        "Id": 102,
+                        "Rating": 85,
+                        "Review": "Journalist Eddie Brock is trying to take down Carlton Drake, the notorious and brilliant founder of the Life Foundation. While investigating one of Drake's experiments, Eddie's body merges with the alien Venom -- leaving him with superhuman strength and power. Twisted, dark and fueled by rage,",
+                        "photo": "./images/Venom.jpg",
+                        "Active": 1
+                    },
+                    {
+                        "Name": "The Nun",
+                        "Id": 103,
+                        "Rating": 63,
+                        "Review": "When a young nun at a cloistered abbey in Romania takes her own life, a priest with a haunted past and a novitiate on the threshold of her final vows are sent by the Vatican to investigate. Together they uncover the orders unholy secret. Risking not only their lives but their faith and their very souls, they confront a malevolent force in the form of the same demonic nun that first terrorized audiences in The Conjuring 2, as the abbey becomes a horrific battleground between the living and the damned.",
+                        "photo": "./images/theNum.jpg"
+                    },
+                    {
+                        "Name": "Avenger Infinity War",
+                        "Id": 104,
+                        "Rating": 78,
+                        "Review": "An unprecedented cinematic journey ten years in the making and spanning the entire Marvel Cinematic Universe, MARVEL STUDIOS' THE AVENGERS: INFINITY WAR brings to the screen the ultimate showdown",
+                        "photo": "./images/Avenger.jpg"
+                    }
+                ]

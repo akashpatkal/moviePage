@@ -1,0 +1,46 @@
+<title> Movie Review</title>
+<p> Search Movie <input type="text" ng-model="movieNameFilter"></p>
+<div ng-controller="movieCtrl" id="carouselMovieController" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item " ng-repeat="movie in movies | filter : movieNameFilter" ng-class="{active: (movie.Active === 1)}">
+            <div class="carousel-caption">
+                <h5>{{movie.Name}}</h5>
+                <footer>People Likes <h6>{{movie.Rating}} % </h6>
+                </footer>
+            </div>
+            <a href="#!movie/{{movie.Id}}"><img class="d-block w-50 h-50" ng-src="{{movie.photo}}" alt="{{movie.Name}}">
+            </a>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselMovieController" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselMovieController" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<br>
+<br>
+<div>
+
+    <div class="row" style="padding: 100dp">
+
+        <div ng-repeat="movie in movies | filter : movieNameFilter" class="col-lg-4  portfolio-item">
+            <div class="card h-100">
+                <a href="#!movie/{{movie.Id}}"><img class="card-img-top" ng-src="{{movie.photo}}" href="#!movie/104"
+                        alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#"> {{movie.Name}} </a>
+                    </h4>
+                    <p class="card-text">{{movie.Review}}
+                    </p>
+                    <footer>People Likes <h6>{{movie.Rating}} % </h6>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
